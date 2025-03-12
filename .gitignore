@@ -1,0 +1,21 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pdb
+.venv
+
+# IDEs
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# Firebase credentials
+firebase_credentials.json
