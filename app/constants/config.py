@@ -1,9 +1,10 @@
 import os
+from dotenv import load_dotenv
 
-EMAIL_SENDER = os.getenv("EMAIL_SENDER", "default@gmail.com")
+load_dotenv(dotenv_path=".env")
+
+EMAIL_SENDER = os.getenv("EMAIL_SENDER", "defaultEMAIL")
+EMAIL_PASS = os.getenv("EMAIL_PASS", "defaultPASS")
+API_URL = os.getenv("API_URL", "defaultURL")
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-EMAIL_PASS = os.getenv("EMAIL_PASS", "defaltpass")
-EMAIL_SUBJECT = "Periodic Email"
-EMAIL_BODY = "This is the body of the email."
-API_URL = "http://127.0.0.1:8002"

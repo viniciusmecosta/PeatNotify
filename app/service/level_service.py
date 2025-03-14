@@ -14,7 +14,7 @@ class LevelService:
             logger.log("Erro ao obter nível.")
             return
 
-        logger.log(f"Nível atual: {level}")
+        logger.log(f"Nível atual: {level}%")
 
         if level > 20:
             logger.log("Nível está OK. Nenhum e-mail necessário.")
