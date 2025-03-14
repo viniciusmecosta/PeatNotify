@@ -1,6 +1,6 @@
+import datetime
 import requests
 from constants.config import API_URL
-import datetime
 
 class APIClient:
     @staticmethod

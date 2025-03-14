@@ -1,4 +1,3 @@
-from utils.logger import logger
 from utils.email_sender import EmailSender
 
 class EmailService:

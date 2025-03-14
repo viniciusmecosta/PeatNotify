@@ -1,5 +1,5 @@
 import smtplib
-from app.utils.body_email import BodyEmail
+from utils.body_email import BodyEmail
 from constants.config import EMAIL_SENDER, SMTP_SERVER, SMTP_PORT, EMAIL_PASS
 from utils.logger import logger
 
@@ -20,7 +20,6 @@ class EmailSender:
                 message = self.body.createBody(name,email,level)
 
                 server.sendmail(EMAIL_SENDER, email, message)
-                
                 logger.log(f"E-mail enviado com sucesso para {name} ({email})")
                 return True
 

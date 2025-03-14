@@ -1,9 +1,8 @@
 from constants.config import EMAIL_SENDER
 from utils.logger import logger
 
-
 class BodyEmail():
-    def __init__():
+    def __init__(self):
         pass
     def createBody(name:str, email:str, level:int) -> str:
         logger.log(f"Enviando e-mail para {name} ({email})...")
