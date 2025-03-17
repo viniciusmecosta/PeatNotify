@@ -4,12 +4,12 @@ class EmailService:
     def __init__(self):
         self.email_sender = EmailSender()
 
-    def send_notifications(self, email_list, level):
+    def send_notifications(self, email_objects, level):
         success_count, failure_count = 0, 0
 
-        for data in email_list:
-            name = data.get("name", "Usuário")
-            email = data["email"]
+        for email_obj in email_objects:
+            name = email_obj.name
+            email = email_obj.email
 
             if self.email_sender.send(name, email, level):
                 success_count += 1

@@ -8,9 +8,9 @@ class App:
 
     def run(self):
         while True:
-            logger.log("Vefiricando Level do comedouro...")
             self.level_service.check_and_notify()
-            time.sleep(60)
+            logger.log("Standing by for 1 hour")
+            time.sleep(3600)
 
 if __name__ == "__main__":
     app = App()

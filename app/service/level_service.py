@@ -7,23 +7,23 @@ class LevelService:
         self.email_service = EmailService()
 
     def check_and_notify(self):
-        logger.log("Verificando nível do comedouro...")
+        message = "Current level do comedouro: "
         level = APIClient.get_level()
 
         if level is None:
-            logger.log("Erro ao obter nível.")
+            logger.log("Error getting level.")
             return
 
-        logger.log(f"Nível atual: {level}%")
+        
 
         if level > 20:
-            logger.log("Nível está OK. Nenhum e-mail necessário.")
+            logger.log(f"{message}{level}% - No send emails.")
             return
-
+        logger.log(f"{message}{level}% - Send emails.")
         emails = APIClient.get_emails()
         if not emails:
-            logger.log("Nenhum e-mail cadastrado para notificação.")
+            logger.log("No emails registered for notification.")
             return
 
         success, failure = self.email_service.send_notifications(emails, level)
-        logger.log(f"Envios concluídos. Sucesso: {success}, Falhas: {failure}")
+        logger.log(f"Sends completed. Success: {success}, Failures: {failure}")
